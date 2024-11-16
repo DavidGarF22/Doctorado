@@ -1,0 +1,60 @@
+version:
+  name: velociraptor
+  version: 0.73.3
+  commit: f96ea5e
+  build_time: "2024-11-04T04:42:55Z"
+  ci_build_url: https://github.com/Velocidex/velociraptor/actions/runs/11658170182
+  compiler: go1.23.2
+  system: linux
+  architecture: amd64
+Client:
+  server_urls:
+  - wss://localhost:8000/
+  ca_certificate: |
+    -----BEGIN CERTIFICATE-----
+    MIIDTDCCAjSgAwIBAgIRAJGSPUInSsXre/KIi+/TTcIwDQYJKoZIhvcNAQELBQAw
+    GjEYMBYGA1UEChMPVmVsb2NpcmFwdG9yIENBMB4XDTI0MTExNjEzNDE0N1oXDTM0
+    MTExNDEzNDE0N1owGjEYMBYGA1UEChMPVmVsb2NpcmFwdG9yIENBMIIBIjANBgkq
+    hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA20kUE6RvSN3UrYAsBH6dwSONmqB20dcy
+    gFjeEox48D4davsHEcHzXp2cRX3WPN2YQFrsFVkaqxma+aOSCkhWwHQyDbmEFLXG
+    7GAI1+zJDvgwshna8ePdL+urJteZl06Ncm1MJ3VB0acsA1RwXZaA9cZjEBloLgbM
+    fX5aDJHHGbQbw2c8vCoJr3zh0gdbjgI1RgRfdFJ1tGBCgw1q75TVKo5KrRcLQy8m
+    86Qz+YoZT4MXQ8MWhhBBABNoMpy5eDESPErv23rxpaOQwoZdFObjruR8fDJ4qnti
+    foLNmLFpIDRFMtLS8bVfNRrfv88MnmSWKRfdvEeoPuCEFglpQ6+K4wIDAQABo4GM
+    MIGJMA4GA1UdDwEB/wQEAwICpDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH
+    AwIwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUrUIOMWf+/+xfK5x60NKSgQk0
+    mO4wKAYDVR0RBCEwH4IdVmVsb2NpcmFwdG9yX2NhLnZlbG9jaWRleC5jb20wDQYJ
+    KoZIhvcNAQELBQADggEBABN4YYOBSrOvyDHIXB52nOeEsCD/4NSt72iCZCzXC892
+    fp0MLIG/eoYze6eiiTJXFPl5ASLfUnhEM6edPSUPdRRq4fZ7udP+OPlJHKw/xehR
+    liE/FZXkNqUlaRIEVpz0cPiVSHcQU5N26QqqtCXiBPzDprzCXdlD7UfrRo6U1BR8
+    FBHTnnKCTVtpPwSF/GQkiBIhpnN3vf4PytUv1FiEp7S4xoya/swEAFGW3q5EJY/6
+    kK68kif1pzaykNMD9A9PoxzsGF5BsgvBQGYZz8f3UKJq8LclGol2fo17Rk/QRgKD
+    Q/PZZeOc4TWYRT/2xrMaeexrzjxhkFhunZBTy24eSnM=
+    -----END CERTIFICATE-----
+  nonce: dIzydcNX1/k=
+  writeback_darwin: /etc/velociraptor.writeback.yaml
+  writeback_linux: /etc/velociraptor.writeback.yaml
+  writeback_windows: $ProgramFiles\Velociraptor\velociraptor.writeback.yaml
+  level2_writeback_suffix: .bak
+  tempdir_windows: $ProgramFiles\Velociraptor\Tools
+  max_poll: 60
+  nanny_max_connection_delay: 600
+  windows_installer:
+    service_name: Velociraptor
+    install_path: $ProgramFiles\Velociraptor\Velociraptor.exe
+    service_description: Velociraptor service
+  darwin_installer:
+    service_name: com.velocidex.velociraptor
+    install_path: /usr/local/sbin/velociraptor
+  server_version:
+    version: 0.73.3
+    commit: f96ea5e
+    build_time: "2024-11-04T04:42:55Z"
+  use_self_signed_ssl: true
+  max_upload_size: 5242880
+  local_buffer:
+    memory_size: 52428800
+    disk_size: 1073741824
+    filename_linux: /var/tmp/Velociraptor_Buffer.bin
+    filename_windows: $TEMP/Velociraptor_Buffer.bin
+    filename_darwin: /var/tmp/Velociraptor_Buffer.bin
