@@ -1,0 +1,9 @@
+---
+# El role installgit instalará git en el nodo
+
+- name: Instalar git
+  become: yes
+  apt:
+    name: git
+    state: present
+    update_cache: yes

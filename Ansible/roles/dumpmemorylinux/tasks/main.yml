@@ -1,0 +1,29 @@
+---
+# El role dumpmemorylinux realizará un volcado de la memoria del nodo y lo almacenará etiquetado además de calcular el valor hash para garantizar la integridad de la evidencia
+
+- name: Descargar el kernel
+  become: yes
+  shell:
+    cmd: rmmod lime
+  failed_when: false
+  
+- name: Adquirir memoria
+  become: yes
+  shell:
+    chdir: "{{limedirectory}}"
+    cmd: insmod "{{limedirectory}}"/lime.ko path="{{memorydumppath}}/{{memorydumplabel}}" format=raw
+    
+- name: Enviar descarga
+  fetch:
+    src: "{{memorydumplabel}}"
+    dest: "{{userpath}}"
+
+- name: Eliminar descarga local
+  file:
+    path: "{{memorydumplabel}}"
+    state: absent
+    
+- name: Calcular hash
+  shell:
+    cmd: sha256sum "{{completepath}}/{{memorydumplabel}}" > "{{completepath}}/{{memorydumplabel}}".hash
+  delegate_to: localhost

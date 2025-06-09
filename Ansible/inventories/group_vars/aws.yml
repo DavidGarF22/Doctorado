@@ -1,0 +1,14 @@
+---
+# Definición de variables utilizadas para el grupo de nodos "aws"
+
+ansible_user: ubuntu
+ansible_port: 22
+ansible_ssh_private_key_file: labsuser.pem
+homedirectory: "/home/{{ansible_user}}"
+limedirectory: "{{homedirectory}}/LiME/src"
+memorydumppath: "{{homedirectory}}"
+memorydumpname: "memDump"
+memorydumpextension: ".dd"
+storagepath: "/home/david/evidenceStorage"
+
+

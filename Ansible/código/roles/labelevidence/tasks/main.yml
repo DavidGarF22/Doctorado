@@ -1,0 +1,18 @@
+---
+# El role labelevidence etiquetará una evidencia:
+#  Nombre del tipo de evidencia
+#  Fecha y hora
+#  Usuario
+#  Nodo
+
+- name: Añadir hora
+  set_fact:
+    evidencelabel: "{{evidencetype}}-{{ansible_facts.date_time.iso8601_basic_short}}{{evidenceextension}}"
+    
+- name: Añadir usuario
+  set_fact:
+    userpath: "{{storagepath}}/{{ansible_facts.user_id}}"
+    
+- name: Añadir nodo
+  set_fact:
+    completepath: "{{userpath}}/{{inventory_hostname}}"

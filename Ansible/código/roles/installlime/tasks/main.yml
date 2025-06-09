@@ -1,0 +1,33 @@
+---
+# El role installlime instalará LiME en el nodo
+
+- name: Instalar git
+  import_role:
+    name: installgit
+
+- name: Clonar LiME
+  git:
+    repo: https://github.com/504ensicsLabs/LiME.git
+    dest: "{{homedirectory}}/LiME"
+
+- name: Instalar make y build-essential (dependencia)
+  become: yes
+  apt:
+    pkg:
+      - make
+      - build-essential
+    state: present
+    update_cache: yes
+
+- name: Instalar linux-headers (dependencia)
+  become: yes
+  apt:
+    name: "linux-headers-{{ansible_facts.kernel}}"
+    state: present
+    update_cache: yes
+    
+- name: Compilar LiME
+  shell:
+    chdir: "{{limedirectory}}"
+    cmd: make -C "/lib/modules/{{ansible_facts.kernel}}/build" M=$PWD
+    
