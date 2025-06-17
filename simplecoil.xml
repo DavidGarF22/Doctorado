@@ -7,11 +7,14 @@
     <programs>
       <program name="SimpleCoil" language="ST">
         <![CDATA[
-          VAR
-              myOutput AT %QX0.0 : BOOL := FALSE;
-          END_VAR
+PROGRAM SimpleCoil
+VAR
+    myOutput AT %QX0.0 : BOOL := FALSE;
+END_VAR
 
-          myOutput := TRUE;
+myOutput := TRUE;
+
+END_PROGRAM
         ]]>
       </program>
     </programs>
