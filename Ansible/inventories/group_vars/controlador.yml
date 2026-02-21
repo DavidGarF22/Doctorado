@@ -1,5 +1,5 @@
 ---
-# Definición de variables utilizadas para el grupo de nodos "ubuntu"
+# Definición de variables utilizadas para el grupo de nodos "controlador"
 
 ansible_user: "{{user}}"
 ansible_become_password: "{{becomepassword}}"
@@ -7,6 +7,9 @@ homedirectory: "/home/{{ansible_user}}"
 limedirectory: "{{homedirectory}}/LiME/src"
 memorydumpname: "memDump"
 memorydumpextension: ".dd"
+captureseconds: 30
+tcpdumpname: "tcpDump"
+tcpdumpextension: ".pcap"
 storagepath: "{{homedirectory}}/evidenceStorage"
 
 

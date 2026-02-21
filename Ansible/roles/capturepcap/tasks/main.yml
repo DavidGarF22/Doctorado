@@ -1,0 +1,17 @@
+---
+# El role capturecap realizará una adquisición del tráfico de red y lo almacenará etiquetado además de calcular el valor hash para garantizar la integridad de la evidencia
+
+- name: Capturar tráfico durante {{captureseconds}} segundos
+  become: yes
+  command: >
+    timeout {{captureseconds}}
+    tcpdump -i any -w "{{completepath}}/{{evidencelabel}}"
+  register: tcpdump
+  changed_when: true
+  failed_when: tcpdump.rc not in [0,124]
+
+- name: Calcular hash
+  become: yes
+  shell:
+    cmd: sha256sum "{{completepath}}/{{evidencelabel}}" > "{{completepath}}/{{evidencelabel}}".hash
+

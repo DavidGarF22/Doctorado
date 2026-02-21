@@ -11,7 +11,7 @@
   become: yes
   shell:
     chdir: "{{limedirectory}}"
-    cmd: insmod "{{limedirectory}}"/lime.ko path="{{memorydumppath}}/{{memorydumplabel}}" format=raw
+    cmd: insmod "{{limedirectory}}"/lime.ko path="{{homedirectory}}/{{memorydumplabel}}" format=raw
     
 - name: Enviar descarga
   fetch:

@@ -1,0 +1,26 @@
+# PlaybookTcpLinux
+# Este playbook realiza una adquisición del tráfico de la red en la que esté el controlador
+# La adquisición se realiza se almacena en un fichero .pcap en la máquina controladora
+
+- name: Adquirir tráfico de red actividad normal
+  hosts: controlador
+  tasks:
+
+  - name: Etiquetar evidencia
+    import_role:
+      name: labelevidence
+    vars:
+      evidencetype: "{{tcpdumpname}}"
+      evidenceextension: "{{tcpdumpextension}}"
+      
+  - name: Crear carpeta de evidencias para este experimento
+    file:
+      path: "{{completepath}}"
+      state: directory
+      mode: '0755'
+    become: true    
+  
+  - name: Capturar tráfico
+    include_role:
+      name: capturepcap
+
