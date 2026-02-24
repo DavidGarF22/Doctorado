@@ -9,29 +9,29 @@ version:
   architecture: amd64
 Client:
   server_urls:
-  - wss://10.0.2.15:8000/
+  - https://10.0.2.20:8000/
   ca_certificate: |
     -----BEGIN CERTIFICATE-----
-    MIIDSzCCAjOgAwIBAgIQLEEQNfjzmnJUdEjA1iyv4jANBgkqhkiG9w0BAQsFADAa
-    MRgwFgYDVQQKEw9WZWxvY2lyYXB0b3IgQ0EwHhcNMjQxMjA3MTIyNzM1WhcNMzQx
-    MjA1MTIyNzM1WjAaMRgwFgYDVQQKEw9WZWxvY2lyYXB0b3IgQ0EwggEiMA0GCSqG
-    SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDlU4JjLMyYyJHt6+WX2tq1MwXK31WAx3TU
-    H27LcslpmRn3HP8FrX685p7fTErn36GIOswQZbvbYDJR9AQrTHoulnV1+ObXyqCC
-    JAql38EKzIwVmFTrYcWG9F0SnfXwufpDjWPufrdiXEDh2Skl9hfyEmVf2PjkZPvQ
-    ZaPy9PTnOHUsg0BdRVzp9tyob0GVoAGxSB6tgyCyhNJM9u+crhx+QavvOU//8+yX
-    edsw1IKdxpXR0MB2AQf17pRaH2hQ+FMG4o4B1n9hItH3UjQxs9nLhRhcEzgyzjAd
-    uxACNtLmndYt8/WfPQTz0Z3r7jAMCa8TcKgmdEWkapIT6nHnqtc9AgMBAAGjgYww
+    MIIDSzCCAjOgAwIBAgIQGO0LR569d7Dl1dvFFLebUjANBgkqhkiG9w0BAQsFADAa
+    MRgwFgYDVQQKEw9WZWxvY2lyYXB0b3IgQ0EwHhcNMjYwMTI1MTkyMzM1WhcNMzYw
+    MTIzMTkyMzM1WjAaMRgwFgYDVQQKEw9WZWxvY2lyYXB0b3IgQ0EwggEiMA0GCSqG
+    SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDn64hUdh5rAXYonv9a1QcYURRtt2G8wyYn
+    YDQSvvKCkxmGqX3Zfq7RRLMQkbbrMhzkEcfeY+HKbh8XwFEKec9DOrp3RShk6/Y2
+    9eRkr+luSit9XjKKtpZXlCQU9sXRZkmi5MuVtER9h15zayu4hZGjwoawk8NkiMHC
+    mlZ+iuazdlwKz2D8kaIjcsZqXMdSwBftr1JQRtY1Hgj6bwW1T/6XExZhhr/CEOID
+    OkAlqxPi0sJsHcK5LP5LVv2NSrfigIeVX5S4vpo2eDSZzZshx2O0SAtKTy2vEmEa
+    3QrZcpNqXG+HuxZMWJYXRdK5s29k7rT5yIRIVRezZLPvNyEdPY1rAgMBAAGjgYww
     gYkwDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD
-    AjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTn4xbxHWV+ewUN7VOngnrNqFC9
-    AjAoBgNVHREEITAfgh1WZWxvY2lyYXB0b3JfY2EudmVsb2NpZGV4LmNvbTANBgkq
-    hkiG9w0BAQsFAAOCAQEAqPtDe58f73HPZ6uSUJvMA9YAk+GEQ2l4xFj4o0yXV8OF
-    Ed/4YnLhN68U2tShjUOkhBnQC1cFqgRoMRgCdO4/HsjiWwFrwvB/MpplV40LNnO8
-    OndaaMNFXif+KdFF4yTub3mqLI6LHn/DMnurDhDnX5xb63X5EXEtwSrjHmjMp8M1
-    bP8XQy3K4BdO1fWWO8OJdAym1cn0BcKwRxvZJFztlc2aKfS1C7z3YOkQEDVeiy8N
-    G8wHlLCI1OBKBZuXk48bclSPZsO2iArLisH1ajZKviDaGiyLlvMv/o92SZWrweux
-    J3qFakL7qG46RJ1EsJrvoWEM6kX1X2mqc0g2Ck7kwA==
+    AjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTEYyEGlBmJ09qVUDBPzDzMPNtU
+    mTAoBgNVHREEITAfgh1WZWxvY2lyYXB0b3JfY2EudmVsb2NpZGV4LmNvbTANBgkq
+    hkiG9w0BAQsFAAOCAQEA1IM+Q0YM7/LmV29fTwHVmv+lyiTKL4bkaU9ETA1wQF5D
+    8Wa59Xce+9d6fLWxiN00IoirR3R7C3DC/d9STL0M2baCju09DwQWBrsgcqnsXBWV
+    /CbjtqaUghRfaXTYxOz/AeO+ktFde5p21sBJumF+nIImLF+cLwpWWyYxJhZLcHng
+    MDiULWKh78ZdLKmjq1sY5jMDJ7JwUo/h0TsK0BV++tQJfWn/x3VvE/KM7gixayOa
+    I6tUG6X4l4CePtadQ8Ojdm3K0FLsRrBKTgCkxWM5aFI8GN3CkUScaH2NQTCoVvnO
+    mvXnf4o2oY7Yt8DP8IFG8tnthwi7rXCuRj6/2R3rGA==
     -----END CERTIFICATE-----
-  nonce: vICQYeAJsvQ=
+  nonce: K66sk0i/kAQ=
   writeback_darwin: /etc/velociraptor.writeback.yaml
   writeback_linux: /etc/velociraptor.writeback.yaml
   writeback_windows: $ProgramFiles\Velociraptor\velociraptor.writeback.yaml
@@ -46,6 +46,15 @@ Client:
   darwin_installer:
     service_name: com.velocidex.velociraptor
     install_path: /usr/local/sbin/velociraptor
+  version:
+    name: velociraptor
+    version: 0.73.3
+    commit: f96ea5e
+    build_time: "2024-11-04T04:42:55Z"
+    ci_build_url: https://github.com/Velocidex/velociraptor/actions/runs/11658170182
+    compiler: go1.23.2
+    system: linux
+    architecture: amd64
   server_version:
     version: 0.73.3
     commit: f96ea5e
