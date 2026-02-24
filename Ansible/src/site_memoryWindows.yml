@@ -1,0 +1,27 @@
+---
+
+# TFM-Playbook03
+# Este playbook realizará una adquisición de información de un nodo Windows utilizando winPMEM.
+# En caso de que winPMEM no esté presente en el nodo, copiará el ejecutable antes de realizar la adquisición.
+# La adquisición se realizará en remoto desde la máquina controladora y se almacenará en formato raw en un fichero .raw
+
+- name: Adquirir memoria en Windows (winPMEM)
+  hosts: windows
+  tasks:
+        
+    - name: Instalar winpmem
+      include_role:
+        name: installwinpmem
+      
+    - name: Generar etiqueta de la adquisición de memoria
+      import_role:
+        name: labelevidence
+      vars:
+        evidencetype: "{{memorydumpname}}"
+        evidenceextension: "{{memorydumpextension}}"
+        
+    - name: Adquirir memoria de Windows
+      import_role:
+        name: dumpmemorywindows
+      vars:
+        memorydumplabel: "{{evidencelabel}}"
