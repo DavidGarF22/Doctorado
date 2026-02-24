@@ -1,5 +1,5 @@
 ---
-# TID-Playbook resetnodes
+# Playbook resetnodes
 # Este playbook reseteará los nodos a su estado inicial sin git ni LiME
 
 - name: Restaurar nodos Ubuntu

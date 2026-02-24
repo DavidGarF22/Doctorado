@@ -1,6 +1,6 @@
 ---
 
-# TFM-Playbook03
+# Playbook memoryWindows
 # Este playbook realizará una adquisición de información de un nodo Windows utilizando winPMEM.
 # En caso de que winPMEM no esté presente en el nodo, copiará el ejecutable antes de realizar la adquisición.
 # La adquisición se realizará en remoto desde la máquina controladora y se almacenará en formato raw en un fichero .raw
