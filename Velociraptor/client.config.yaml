@@ -12,26 +12,9 @@ Client:
   - https://10.0.2.20:8000/
   ca_certificate: |
     -----BEGIN CERTIFICATE-----
-    MIIDSzCCAjOgAwIBAgIQGO0LR569d7Dl1dvFFLebUjANBgkqhkiG9w0BAQsFADAa
-    MRgwFgYDVQQKEw9WZWxvY2lyYXB0b3IgQ0EwHhcNMjYwMTI1MTkyMzM1WhcNMzYw
-    MTIzMTkyMzM1WjAaMRgwFgYDVQQKEw9WZWxvY2lyYXB0b3IgQ0EwggEiMA0GCSqG
-    SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDn64hUdh5rAXYonv9a1QcYURRtt2G8wyYn
-    YDQSvvKCkxmGqX3Zfq7RRLMQkbbrMhzkEcfeY+HKbh8XwFEKec9DOrp3RShk6/Y2
-    9eRkr+luSit9XjKKtpZXlCQU9sXRZkmi5MuVtER9h15zayu4hZGjwoawk8NkiMHC
-    mlZ+iuazdlwKz2D8kaIjcsZqXMdSwBftr1JQRtY1Hgj6bwW1T/6XExZhhr/CEOID
-    OkAlqxPi0sJsHcK5LP5LVv2NSrfigIeVX5S4vpo2eDSZzZshx2O0SAtKTy2vEmEa
-    3QrZcpNqXG+HuxZMWJYXRdK5s29k7rT5yIRIVRezZLPvNyEdPY1rAgMBAAGjgYww
-    gYkwDgYDVR0PAQH/BAQDAgKkMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcD
-    AjAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTEYyEGlBmJ09qVUDBPzDzMPNtU
-    mTAoBgNVHREEITAfgh1WZWxvY2lyYXB0b3JfY2EudmVsb2NpZGV4LmNvbTANBgkq
-    hkiG9w0BAQsFAAOCAQEA1IM+Q0YM7/LmV29fTwHVmv+lyiTKL4bkaU9ETA1wQF5D
-    8Wa59Xce+9d6fLWxiN00IoirR3R7C3DC/d9STL0M2baCju09DwQWBrsgcqnsXBWV
-    /CbjtqaUghRfaXTYxOz/AeO+ktFde5p21sBJumF+nIImLF+cLwpWWyYxJhZLcHng
-    MDiULWKh78ZdLKmjq1sY5jMDJ7JwUo/h0TsK0BV++tQJfWn/x3VvE/KM7gixayOa
-    I6tUG6X4l4CePtadQ8Ojdm3K0FLsRrBKTgCkxWM5aFI8GN3CkUScaH2NQTCoVvnO
-    mvXnf4o2oY7Yt8DP8IFG8tnthwi7rXCuRj6/2R3rGA==
+    *****************************************
     -----END CERTIFICATE-----
-  nonce: K66sk0i/kAQ=
+  nonce: ************
   writeback_darwin: /etc/velociraptor.writeback.yaml
   writeback_linux: /etc/velociraptor.writeback.yaml
   writeback_windows: $ProgramFiles\Velociraptor\velociraptor.writeback.yaml
