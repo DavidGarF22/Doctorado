@@ -1,77 +1,107 @@
-# Automatización Forense con Ansible
+# Framework de adquisición forense basado en Ansible
 
-Este módulo forma parte del Trabajo de Investigación Doctoral centrado en la adquisición remota de evidencias digitales, especialmente memoria volátil, en entornos corporativos e industriales.
+Este directorio contiene la implementación experimental de un **framework de adquisición remota de evidencias digitales basado en Ansible**.
 
-La solución implementada permite la ejecución remota, sin agentes, de herramientas forenses en sistemas Linux y Windows, garantizando la trazabilidad, integridad y cumplimiento normativo del proceso.
+El sistema implementa un enfoque **agentless**, en el que los nodos remotos no requieren la instalación permanente de software forense.
+
+El objetivo es permitir la **automatización de tareas de adquisición de evidencias** manteniendo trazabilidad y mínima intrusión.
 
 ---
 
+## Arquitectura
+
+La arquitectura sigue un modelo **controlador-nodos gestionados**:
+
+```
+Control node (Ansible)
+        ↓
+Remote hosts (Linux targets)
+```
+
+El nodo de control ejecuta los playbooks y coordina la adquisición de evidencias en los sistemas remotos.
+
+---
 ## 📁 Estructura del proyecto
 
 ```
 Ansible/
-├── ansible.cfg              # Configuración principal de Ansible
-├── site_memoryLinux.yml     # Playbook principal de adquisición en Linux
-├── resetnodes.yml           # Playbook para reiniciar el estado de nodos
-├── roles/                   # Módulos funcionales organizados por tareas
-├── inventories/             # Inventario de nodos y variables por grupo/host
-├── tests/                   # Playbooks de prueba y validación de conectividad
-├── docs/                    # Documentación técnica y literaria para tesis
-└── README.md
+├── inventories/
+├── group_vars/
+├── host_vars/
+├── roles/
+├── src/
+└── tests/
+
+```
+**inventories/**  
+Inventarios de hosts gestionados.
+
+**group_vars/**  
+Variables compartidas por grupos de sistemas.
+
+**host_vars/**  
+Variables específicas para cada host.
+
+**roles/**  
+Roles de Ansible que implementan tareas de adquisición forense.
+
+**src/**  
+Scripts auxiliares utilizados en los experimentos.
+
+**tests/**  
+Escenarios de prueba.
+
+---
+
+## Funcionalidades implementadas
+
+El framework permite automatizar:
+
+- adquisición de **memoria RAM**
+- ejecución de herramientas forenses remotas
+- captura de **tráfico de red**
+- recopilación de metadatos del sistema
+- cálculo de **hashes de integridad**
+- transferencia segura de evidencias
+
+---
+
+## Requisitos
+
+- Linux
+- Ansible
+- acceso SSH a los nodos gestionados
+- privilegios adecuados para la adquisición de evidencias
+
+---
+
+## Ejecución básica
+
+Ejemplo de ejecución de un playbook:
+
+```
+ansible-playbook playbook.yml -i inventories/hosts.yml
 ```
 
 ---
 
-## ▶️ Uso básico
+## Advertencia
 
-### Ejecutar adquisición de memoria en nodos definidos
+Los playbooks incluidos se utilizaron en un **entorno experimental controlado**.
 
-```bash
-ansible-playbook -i inventories/tid_hosts.yml site_memoryLinux.yml
-```
+Antes de ejecutarlos en otros entornos deben revisarse:
 
-### Reiniciar nodos (limpieza de estado)
-
-```bash
-ansible-playbook -i inventories/tid_hosts.yml resetnodes.yml
-```
+- permisos
+- rutas de almacenamiento
+- impacto potencial sobre los sistemas
 
 ---
 
-## 📚 Componentes clave
+## Uso en la investigación
 
-- `roles/`: contiene funciones específicas como:
-  - `installlime`: descarga y compila LiME
-  - `dumpmemorylinux`: realiza volcado de memoria
-  - `checklime`: verifica existencia del módulo
-  - `labelevidence`: etiqueta evidencia con metadatos
-- `inventories/`: define los nodos objetivo organizados por:
-  - `group_vars`: variables por grupo de sistemas (`aws`, `ubuntu`)
-  - `host_vars`: variables específicas por IP o nodo
-- `tests/`: contiene scripts de prueba como `PruebaAcceso.yml` o validaciones de conexión
-- `docs/`: literaturas de apoyo como:
-  - arquitectura del laboratorio
-  - escenarios de validación
-  - normativa de referencia
-  - integración con la tesis doctoral
+Este framework fue utilizado en los experimentos descritos en la tesis doctoral para evaluar:
 
----
-
-## ⚖️ Normativa y cumplimiento
-
-Esta solución está alineada con las siguientes directrices y marcos regulatorios:
-
-- **ISO/IEC 27037:2016** — Identificación, recogida, adquisición y preservación de evidencia digital
-- **UNE 71506:2013** — Guía metodológica de análisis forense digital
-- **Reglamento e-Evidence (UE)** y **Directiva NIS2**
-- **Cadena de custodia**: se emplean firmas hash SHA-256, sellado temporal, registros de adquisición y logs automatizados
-
----
-
-## 📌 Notas adicionales
-
-- Esta solución ha sido probada en entornos locales virtualizados (VirtualBox), así como en nodos en AWS.
-- La modularidad de Ansible permite extender el sistema fácilmente a nuevos entornos, incluidos sistemas industriales virtualizados como OpenPLC y SCADA.
-- La documentación en `docs/` se integra con el desarrollo de la tesis para asegurar trazabilidad completa de los experimentos.
-
----
+- viabilidad operativa
+- tiempos de adquisición
+- integridad de las evidencias
+- impacto en los sistemas objetivo
