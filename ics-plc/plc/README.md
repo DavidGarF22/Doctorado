@@ -1,43 +1,57 @@
-# Laboratorio ICS simplificado
+# PLC simulado para laboratorio ICS
 
-Este directorio contiene componentes de un **laboratorio experimental simplificado de sistemas industriales (ICS)** utilizado durante los experimentos de la tesis.
+Este directorio contiene una implementación simplificada de un **PLC simulado**, utilizada para generar tráfico de red representativo de sistemas industriales.
 
-El laboratorio se diseñó para generar tráfico industrial controlado que pudiera ser utilizado como evidencia digital en escenarios de análisis forense.
+El PLC se ejecuta dentro de un contenedor Docker.
+
+---
+
+## Componentes
+
+```
+plc/
+├── Dockerfile
+└── server.py
+```
+
+**Dockerfile**  
+Definición del contenedor utilizado para ejecutar el PLC simulado.
+
+**server.py**  
+Servidor que implementa la lógica básica del PLC.
+
+---
+
+## Construcción de la imagen
+
+```
+docker build -t simulated-plc .
+```
+
+---
+
+## Ejecución
+
+```
+docker run -p 502:502 simulated-plc
+```
 
 ---
 
 ## Objetivo
 
-El entorno permite:
+El PLC simulado permite:
 
-- generar tráfico de red representativo de sistemas industriales
-- capturar comunicaciones para análisis forense
-- integrar la adquisición de evidencias dentro de un entorno ICS simulado
-
----
-
-## Estructura
-
-```
-ics-plc/
-└── plc/
-```
-
-**plc/**  
-Simulación de PLC mediante contenedor Docker.
+- generar tráfico industrial
+- capturar comunicaciones
+- realizar análisis de red en escenarios DFIR
 
 ---
 
-## Alcance
+## Limitaciones
 
-El entorno **no pretende replicar un sistema industrial real**, sino proporcionar un escenario controlado para:
+Este componente:
 
-- experimentación
-- validación de herramientas
-- captura de evidencias de red
-
----
-
-## Uso en la investigación
-
-Este laboratorio se utilizó en la evaluación de la adquisición automatizada de evidencias en **entornos industriales simulados**.
+- no implementa completamente protocolos industriales
+- no pretende replicar un PLC real
+- está diseñado únicamente para experimentación académica
