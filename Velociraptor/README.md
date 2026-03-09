@@ -1,72 +1,74 @@
-**inventories/**  
-Inventarios de hosts gestionados.
+# Configuración experimental de Velociraptor
 
-**group_vars/**  
-Variables compartidas por grupos de sistemas.
+Este directorio contiene la configuración utilizada para los experimentos realizados con **Velociraptor**, una plataforma DFIR basada en agentes.
 
-**host_vars/**  
-Variables específicas para cada host.
-
-**roles/**  
-Roles de Ansible que implementan tareas de adquisición forense.
-
-**src/**  
-Scripts auxiliares utilizados en los experimentos.
-
-**tests/**  
-Escenarios de prueba.
+Velociraptor se utilizó como **herramienta de referencia** para comparar el enfoque agentless basado en Ansible con una solución ampliamente utilizada en investigación forense digital.
 
 ---
 
-## Funcionalidades implementadas
+## Componentes incluidos
 
-El framework permite automatizar:
+El directorio contiene:
 
-- adquisición de **memoria RAM**
-- ejecución de herramientas forenses remotas
-- captura de **tráfico de red**
-- recopilación de metadatos del sistema
-- cálculo de **hashes de integridad**
-- transferencia segura de evidencias
+- configuración del **servidor Velociraptor**
+- configuración del **cliente/agente**
+- artefactos personalizados utilizados en los experimentos
 
 ---
 
-## Requisitos
-
-- Linux
-- Ansible
-- acceso SSH a los nodos gestionados
-- privilegios adecuados para la adquisición de evidencias
-
----
-
-## Ejecución básica
-
-Ejemplo de ejecución de un playbook:
+## Estructura
 
 ```
-ansible-playbook playbook.yml -i inventories/hosts.yml
+Velociraptor/
+├── server.config.yaml
+├── client.config.yaml
+├── artifacts/
+└── tools/
 ```
 
+**server.config.yaml**  
+Configuración del servidor Velociraptor.
+
+**client.config.yaml**  
+Configuración del agente utilizado en los sistemas monitorizados.
+
+**artifacts/**  
+Artefactos personalizados utilizados en los experimentos.
+
+**tools/**  
+Herramientas auxiliares utilizadas durante la adquisición.
+
 ---
 
-## Advertencia
+## Artefactos DFIR
 
-Los playbooks incluidos se utilizaron en un **entorno experimental controlado**.
+Los artefactos incluidos permiten automatizar tareas como:
 
-Antes de ejecutarlos en otros entornos deben revisarse:
-
-- permisos
-- rutas de almacenamiento
-- impacto potencial sobre los sistemas
+- adquisición de memoria
+- recopilación de información del sistema
+- captura de artefactos del sistema operativo
 
 ---
 
-## Uso en la investigación
+## Uso en los experimentos
 
-Este framework fue utilizado en los experimentos descritos en la tesis doctoral para evaluar:
+Velociraptor fue utilizado para evaluar:
 
-- viabilidad operativa
 - tiempos de adquisición
-- integridad de las evidencias
-- impacto en los sistemas objetivo
+- impacto en el sistema
+- facilidad de despliegue
+- automatización de procesos DFIR
+
+Los resultados se compararon con el enfoque basado en Ansible.
+
+---
+
+## Nota de seguridad
+
+Las configuraciones incluidas están adaptadas a un **laboratorio experimental**.
+
+Antes de utilizarlas en un entorno real deben revisarse cuidadosamente:
+
+- certificados
+- rutas
+- parámetros de red
